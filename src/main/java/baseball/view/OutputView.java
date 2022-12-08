@@ -27,7 +27,7 @@ public class OutputView {
         System.out.println(ball+outputString.BALL.getPrint() + " " + strike + outputString.STRIKE.getPrint());
     }
     public void printEnd() {
-        System.out.println(outputString.RESTART.getPrint());
+        System.out.println(outputString.FINAL.getPrint());
     }
     public void printRestart() {
         System.out.println(outputString.RESTART.getPrint());
