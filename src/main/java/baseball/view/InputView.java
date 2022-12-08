@@ -1,10 +1,10 @@
 package baseball.view;
 
-import baseball.domain.OutputString;
+import static camp.nextstep.edu.missionutils.Console.readLine;
 
 public class InputView {
     public String inputNumber() {
-        String input = camp.nextstep.edu.missionutils.Console.readLine();
+        String input = readLine();
         System.out.println();
         return input;
     }
