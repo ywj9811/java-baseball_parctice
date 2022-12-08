@@ -19,22 +19,28 @@ public class GameController {
     private int strikeCount = 0;
 
     public void gameProcess(int idx) {
-        outputView.printInputNumber();
-        inputNum = inputView.inputNumber();
         ballCount += checkNumber.checkBall(randomNumber, inputNum, idx);
         strikeCount += checkNumber.checkStrike(randomNumber, inputNum, idx);
     }
 
-    public void gameStart() {
+    public void gameStartAndEnd() {
         outputView.startGame();
         randomNumber = computerNumber.makeComputerNumber();
         while (strikeCount != 3) {
             ballCount = 0;
             strikeCount = 0;
+            outputView.printInputNumber();
+            inputNum = inputView.inputNumber();
             for (int i = 0; i < randomNumber.size(); i++) {
                 gameProcess(i);
             }
             outputView.printResult(strikeCount, ballCount);
+        }
+        outputView.printEnd();
+        outputView.printRestart();
+        int restart = Integer.parseInt(inputView.inputNumber());
+        if (restart == 1) {
+            gameStartAndEnd();
         }
     }
 }
