@@ -26,12 +26,19 @@ public class InputValidation {
             throw new IllegalArgumentException("1 혹은 2를 입력해야 합니다.");
     }
 
+    public void nullInput(String input) {
+        if (input.isEmpty())
+            throw new IllegalArgumentException("빈값이 입력됐습니다.");
+    }
+
     public void playerInputNumberValidation(String input) {
+        nullInput(input);
         notNumber(input);
         overNumber(input);
         duplicatedNumber(input);
     }
     public void playerRestartValidation(String input) {
+        nullInput(input);
         notNumber(input);
         notRestartNumber(input);
     }
