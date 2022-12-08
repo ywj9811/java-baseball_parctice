@@ -24,6 +24,8 @@ public class GameController {
     }
 
     public void gameStartAndEnd() {
+        ballCount = 0;
+        strikeCount = 0;
         outputView.startGame();
         randomNumber = computerNumber.makeComputerNumber();
         while (strikeCount != 3) {
